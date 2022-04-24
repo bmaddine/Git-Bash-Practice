@@ -1,0 +1,47 @@
+#%RAML 1.0
+title: Calculator2-api
+version: V1 api version
+protocols:
+  - HTTPS
+  - HTTP
+traits:
+  Que: !include /Traits/QueryParam-trait.raml
+/Addition:
+  get: 
+    is: [Que]
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /Calc_Examples/CalcAdd-response.json     
+/Subtraction:
+  post:
+    is: [Que]
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include Calc_Examples/Calcsub_response.json             
+/Multiplication:
+  patch:
+    is: [Que]
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include Calc_Examples/CalcMul_Response.json
+/Divison:
+  put:
+    is: [Que]
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include Calc_Examples/CalcDiv-Responses.json
+      
+
+    
+    
+
+          
+
